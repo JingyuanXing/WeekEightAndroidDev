@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected Button myButton;
     String myString = "GOOD MORNING Pratysha and Julia!";
+    protected Button myButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +26,24 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        myButton = (Button)findViewById(R.id.button2);
-
+        // MY TOAST
+        myButton = (Button)findViewById(R.id.button1);
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Toast.makeText(getApplicationContext(),myString,Toast.LENGTH_LONG).show();
+            }
+        });
+
+        // MY SNACK BAR
+        myButton2 = (Button) findViewById(R.id.button2);
+        myButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Snackbar.make(v, "Hello from Jingyuan's snackbar!!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
         });
 
